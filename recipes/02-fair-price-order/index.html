@@ -1,5 +1,39 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Fair-price order · Mimir</title><link rel="stylesheet" href="/src/style.css"/></head><body><main>
-<header class="brand"><span class="mark">M</span><b>Mimir</b><span>Cookbook · 02</span></header><h1>Fair-price order</h1><p>A maker buys tokens for USDC. The program pays only if the price sits inside Mimir's bound.</p>
-<section class="box"><div class="eyebrow">PROTECTED ORDER</div><div id="normal" class="decision neutral"><small>PROTECTED ORDER</small><b>Not checked</b><span>Mimir bound ± 1%</span></div><div class="actions"><button id="refresh" class="ghost">Refresh price</button><button id="fill">Place protected order</button></div><p id="evidence" class="muted">The fill does not write the pool Mimir reads, so the refresh and the check share one transaction. Placing an order needs your own deployment of the program.</p></section>
-<section class="box"><div class="eyebrow">SAME QUOTE, RECORDED</div><ol id="replay" class="steps"></ol></section>
-</main><script type="module" src="/src/main.ts"></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Fair-price order · Mimir</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main>
+      <header class="brand">
+        <span class="mark">M</span><b>Mimir</b><span>Cookbook · 02</span>
+      </header>
+      <h1>Fair-price order</h1>
+      <p>
+        A maker buys tokens for USDC. The program pays only if the price sits inside Mimir's bound.
+      </p>
+      <section class="box">
+        <div class="eyebrow">PROTECTED ORDER</div>
+        <div id="normal" class="decision neutral">
+          <small>PROTECTED ORDER</small><b>Not checked</b><span>Mimir bound ± 1%</span>
+        </div>
+        <div id="actions" class="actions">
+          <button id="refresh" class="ghost">Refresh price</button
+          ><button id="fill">Place protected order</button>
+        </div>
+        <p id="evidence" class="muted">
+          The fill does not write the pool Mimir reads, so the refresh and the check share one
+          transaction. Placing an order needs your own deployment of the program.
+        </p>
+      </section>
+      <section class="box">
+        <div class="eyebrow">SAME QUOTE, RECORDED</div>
+        <ol id="replay" class="steps"></ol>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

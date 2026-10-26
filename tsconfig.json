@@ -1,7 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ES2022", "module": "ESNext", "moduleResolution": "Bundler", "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "strict": true, "noEmit": true, "skipLibCheck": true, "resolveJsonModule": true, "types": ["vite/client"], "allowImportingTsExtensions": true
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "types": ["vite/client"],
+    "allowImportingTsExtensions": true
   },
-  "include": ["packages/*/src", "recipes/*/src", "scripts"]
+  "include": [
+    "packages/*/src",
+    "packages/*/vite-plugin.ts",
+    "recipes/*/vite.config.ts",
+    "recipes/*/src",
+    "scripts"
+  ]
 }

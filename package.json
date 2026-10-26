@@ -11,10 +11,13 @@
     "check": "tsc -p .",
     "test": "cargo test --manifest-path programs/mimir-cookbook/Cargo.toml",
     "preflight": "node --experimental-strip-types scripts/preflight.ts",
-    "localnet": "node --experimental-strip-types scripts/localnet.ts"
+    "localnet": "node --experimental-strip-types scripts/localnet.ts",
+    "format": "prettier --write . && cargo fmt --manifest-path programs/mimir-cookbook/Cargo.toml",
+    "format:check": "prettier --check . && cargo fmt --check --manifest-path programs/mimir-cookbook/Cargo.toml"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",
+    "prettier": "3.9.10",
     "typescript": "^5.9.3",
     "vite": "^8.3.5"
   }

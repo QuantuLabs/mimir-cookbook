@@ -1,2 +1,48 @@
 @import "mimir-easy/style.css";
-.mark{display:grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--brand);color:var(--card);font-weight:800}.eyebrow{font-size:12px;letter-spacing:.14em;color:var(--muted)}.decision{padding:18px;border:1px solid var(--line);border-radius:14px;display:grid;gap:3px}.decision b{font-size:24px}.decision span{color:var(--muted)}.decision.pass{border-color:var(--up);background:color-mix(in srgb,var(--up) 9%,transparent)}.decision.fail{border-color:var(--down);background:color-mix(in srgb,var(--down) 9%,transparent)}.actions{display:flex;flex-wrap:wrap;gap:8px}.actions button{flex:1 1 auto}#evidence{overflow-wrap:anywhere}
+.mark {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  background: var(--brand);
+  color: var(--card);
+  font-weight: 800;
+}
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+.decision {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  display: grid;
+  gap: 3px;
+}
+.decision b {
+  font-size: 24px;
+}
+.decision span {
+  color: var(--muted);
+}
+.decision.pass {
+  border-color: var(--up);
+  background: color-mix(in srgb, var(--up) 9%, transparent);
+}
+.decision.fail {
+  border-color: var(--down);
+  background: color-mix(in srgb, var(--down) 9%, transparent);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.actions button {
+  flex: 1 1 auto;
+}
+#evidence {
+  overflow-wrap: anywhere;
+}
