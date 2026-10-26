@@ -15,24 +15,35 @@ Three small apps where an onchain program reads a Mimir price and decides: lend,
 
 <table><tr><td width="33%"><a href="recipes/01-lend-against-any-token"><img src="assets/01-step2.webp" alt="Loan approved: 1 USDC against 1,000 DOOD"></a></td><td width="33%"><a href="recipes/02-fair-price-order"><img src="assets/02-step3.webp" alt="The same quote passes, then is refused after a +25% pool buy"></a></td><td width="33%"><a href="recipes/03-price-shock-spot-vs-mimir"><img src="assets/03-step3.webp" alt="The spot lender holds bad debt; the Mimir lender declined"></a></td></tr></table>
 
-## Run
+## Quick start
+
+Needs Node.js 22.6+, Rust, and the Agave (Solana) CLI (`solana-test-validator`, `cargo build-sbf`).
 
 ```bash
+git clone https://github.com/QuantuLabs/mimir-cookbook.git && cd mimir-cookbook
 npm ci
-npm run preflight                         # read-only: checks the feed and refreshes it in a simulation on mainnet
-npm run dev -w 01-lend-against-any-token
+npm run preflight                                   # read-only check of the feed on mainnet
+(cd programs/mimir-cookbook && cargo build-sbf)     # build the teaching program
+RPC=<your mainnet RPC URL> npm run localnet         # local copy of mainnet + a funded test wallet; leave it running
 ```
 
-- The defaults are mainnet and the SOL/USDC Mimir feed (see `.env.example`). To change them, copy it to `.env.local`. The public mainnet endpoint serves `npm run preflight` but refuses browser requests: set `VITE_RPC_URL` to your own endpoint for the apps.
-- **Refresh price** reads mainnet through your endpoint. Borrow, fill and repay need the program in [`programs/mimir-cookbook`](programs/mimir-cookbook). It is a teaching vault: never fund it on mainnet. Run it on a local copy of mainnet instead:
+In a second terminal, put the two lines `npm run localnet` printed in `.env.local`, then run an app:
 
-  ```bash
-  (cd programs/mimir-cookbook && cargo build-sbf)
-  npm run localnet -- <your wallet address>   # clones Mimir, the feed and its pools; funds your wallet and the vaults
-  ```
+```bash
+printf 'VITE_RPC_URL=http://127.0.0.1:8899\nVITE_CONSUMER=<program address it printed>\n' > .env.local
+npm run dev -w 01-lend-against-any-token            # or 02-fair-price-order, 03-price-shock-spot-vs-mimir
+```
 
-  Put the two lines it prints in `.env.local`, then run an app. Nothing trades on the local copy, so after a minute or two its price is no longer Fresh and the apps decline, as they should; run `npm run localnet` again to clone current pools.
-- `npm run check` type-checks the apps; `npm test` runs the program's unit tests (Rust).
+Click **Use the local test wallet** (shown only on a localhost RPC), then follow the buttons. Each
+recipe README has the full steps, what you should see, and troubleshooting.
+
+- The program is a teaching vault: never fund it on mainnet. Nothing trades on the local copy, so
+  after a minute or two its price is no longer Fresh and the apps decline, as they should; rerun
+  `npm run localnet` to clone current pools.
+- Without `.env.local` the apps read mainnet (SOL/USDC feed, see `.env.example`). The public
+  endpoint refuses browser requests: set `VITE_RPC_URL` to your own.
+- `npm run check` type-checks, `npm test` runs the program's unit tests, `npm run format` formats
+  TypeScript (Prettier) and Rust (`cargo fmt`).
 
 The pictures were recorded on a local validator cloned from mainnet, with DOOD, a token that trades in one Raydium USDC pool.
 
