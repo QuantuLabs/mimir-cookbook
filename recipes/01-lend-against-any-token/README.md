@@ -31,4 +31,4 @@ Measured in the recorded run:
 - **Repay or release:** about 9,550 CU, 12 accounts, 5,000 lamports.
 - **Price not Fresh:** the consumer returns error 1 and the transaction changes nothing.
 
-Run `npm run preflight`, then `npm run dev -w 01-lend-against-any-token`. **Refresh price** reads mainnet through your `VITE_RPC_URL`; borrow and repay need your own deployment of [`programs/mimir-cookbook`](../../programs/mimir-cookbook) (`VITE_CONSUMER`). The app sizes the collateral at twice the 1 USDC loan, at the lower bound.
+Run `npm run preflight`, then `npm run dev -w 01-lend-against-any-token`. **Refresh price** reads mainnet through your `VITE_RPC_URL`; borrow and repay need [`programs/mimir-cookbook`](../../programs/mimir-cookbook): run them on a local copy of mainnet with `npm run localnet` (see the [root README](../../README.md#run)). The app sizes the collateral at twice the 1 USDC loan, at the lower bound.

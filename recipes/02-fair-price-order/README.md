@@ -31,4 +31,4 @@ Measured in the recorded run:
 - **Refresh + fill:** 73,623 CU in simulation, 9 program accounts, 1 signature, 5,000 lamports.
 - **Price not Fresh:** the program returns error 1 and no token moves.
 
-Run `npm run preflight`, then `npm run dev -w 02-fair-price-order`. **Refresh price** reads mainnet through your `VITE_RPC_URL`, and the recorded replay needs no RPC; placing an order needs your own deployment of [`programs/mimir-cookbook`](../../programs/mimir-cookbook) (`VITE_CONSUMER`). The app sizes the order at about 1 USDC.
+Run `npm run preflight`, then `npm run dev -w 02-fair-price-order`. **Refresh price** reads mainnet through your `VITE_RPC_URL`, and the recorded replay needs no RPC; placing an order needs [`programs/mimir-cookbook`](../../programs/mimir-cookbook): run it on a local copy of mainnet with `npm run localnet` (see the [root README](../../README.md#run)). The app sizes the order at about 1 USDC.

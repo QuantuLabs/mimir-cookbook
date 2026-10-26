@@ -24,7 +24,14 @@ npm run dev -w 01-lend-against-any-token
 ```
 
 - The defaults are mainnet and the SOL/USDC Mimir feed (see `.env.example`). To change them, copy it to `.env.local`. The public mainnet endpoint serves `npm run preflight` but refuses browser requests: set `VITE_RPC_URL` to your own endpoint for the apps.
-- **Refresh price** reads mainnet through your endpoint. Borrow, fill and repay need your own deployment of the program in [`programs/mimir-cookbook`](programs/mimir-cookbook) (set `VITE_CONSUMER`), for example on a local validator cloned from mainnet. It is a teaching vault: never fund it on mainnet.
+- **Refresh price** reads mainnet through your endpoint. Borrow, fill and repay need the program in [`programs/mimir-cookbook`](programs/mimir-cookbook). It is a teaching vault: never fund it on mainnet. Run it on a local copy of mainnet instead:
+
+  ```bash
+  (cd programs/mimir-cookbook && cargo build-sbf)
+  npm run localnet -- <your wallet address>   # clones Mimir, the feed and its pools; funds your wallet and the vaults
+  ```
+
+  Put the two lines it prints in `.env.local`, then run an app. Nothing trades on the local copy, so after a minute or two its price is no longer Fresh and the apps decline, as they should; run `npm run localnet` again to clone current pools.
 - `npm run check` type-checks the apps; `npm test` runs the program's unit tests (Rust).
 
 The pictures were recorded on a local validator cloned from mainnet, with DOOD, a token that trades in one Raydium USDC pool.
