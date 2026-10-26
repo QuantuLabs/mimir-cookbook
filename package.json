@@ -1,0 +1,20 @@
+{
+  "name": "mimir-cookbook",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "recipes/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "check": "tsc -p .",
+    "test": "cargo test --manifest-path programs/mimir-cookbook/Cargo.toml",
+    "preflight": "node --experimental-strip-types scripts/preflight.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.5"
+  }
+}

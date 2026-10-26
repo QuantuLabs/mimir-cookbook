@@ -1,0 +1,77 @@
+{
+  "label": "after-buy",
+  "slot": 460064080,
+  "pool": {
+    "rb": "119657782786860309",
+    "rq": "329251942575",
+    "spot": 0.0027516132666562778,
+    "poolHash": "68ff3e02ae8e448e26c0dbe5495a1c772b0c1b1eba58cbe6f577c5274c1381e5"
+  },
+  "mimir": {
+    "refreshSlot": 460064080,
+    "fresh": true,
+    "price": 0.002751613035798073,
+    "lower": 0.002751613035798073,
+    "upper": 0.002751613035798073,
+    "confidence": 1,
+    "slot": 460064080,
+    "base": "DvjbEsdca43oQcw2h3HW1CT7N3x5vRcr3QrvTUHnXvgV",
+    "decimals": 9
+  },
+  "collateral": "1000000000000",
+  "spotLender": {
+    "slot": 460064080,
+    "err": null,
+    "reason": null,
+    "cu": 20903,
+    "receipt": {
+      "price": 0.002751613035798073,
+      "limit": "2476451",
+      "slot": 460064080
+    }
+  },
+  "mimirLender": {
+    "slot": 460064080,
+    "err": {
+      "InstructionError": [
+        2,
+        {
+          "Custom": 1
+        }
+      ]
+    },
+    "reason": "Declined by the consumer: price is not Fresh.",
+    "cu": 56688,
+    "receipt": null
+  },
+  "mimirLimit": {
+    "slot": 460064080,
+    "err": {
+      "InstructionError": [
+        2,
+        {
+          "Custom": 1
+        }
+      ]
+    },
+    "reason": "Declined by the consumer: price is not Fresh.",
+    "cu": 56688,
+    "receipt": null
+  },
+  "makerQuote": {
+    "collateral": "100000000000",
+    "payout": "221717",
+    "slot": 460064080,
+    "err": {
+      "InstructionError": [
+        2,
+        {
+          "Custom": 1
+        }
+      ]
+    },
+    "reason": "Declined by the consumer: price is not Fresh.",
+    "cu": 56595,
+    "receipt": null
+  }
+}

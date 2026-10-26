@@ -1,0 +1,22 @@
+[package]
+name = "mimir-cookbook"
+version = "0.1.0"
+description = "Teaching consumer program for the Mimir cookbook"
+edition = "2021"
+license = "Apache-2.0"
+repository = "https://github.com/QuantuLabs/mimir-cookbook"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "mimir_cookbook"
+
+[features]
+default = []
+no-entrypoint = []
+
+[dependencies]
+pinocchio = { version = "0.10", features = ["cpi"] }
+solana-address = { version = "=2.6.1", features = ["curve25519"] }
+
+[workspace]

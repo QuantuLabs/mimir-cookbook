@@ -1,0 +1,68 @@
+{
+  "label": "baseline",
+  "slot": 460064019,
+  "pool": {
+    "rb": "133781468173581254",
+    "rq": "294426451334",
+    "spot": 0.00220080146640327,
+    "poolHash": "235c2ede25ec0f480c83555db905e738eb52febdd61821f1db0b7e789b5d02b3"
+  },
+  "mimir": {
+    "refreshSlot": 460064019,
+    "fresh": true,
+    "price": 0.002217172412201762,
+    "lower": 0.0022008013911545277,
+    "upper": 0.0022276421077549458,
+    "confidence": 74,
+    "slot": 460064019,
+    "base": "DvjbEsdca43oQcw2h3HW1CT7N3x5vRcr3QrvTUHnXvgV",
+    "decimals": 9
+  },
+  "collateral": "1000000000000",
+  "spotLender": {
+    "slot": 460064019,
+    "err": null,
+    "reason": null,
+    "cu": 20905,
+    "receipt": {
+      "price": 0.0022008013911545277,
+      "limit": "1980720",
+      "slot": 460064019
+    }
+  },
+  "mimirLender": {
+    "slot": 460064019,
+    "err": null,
+    "reason": null,
+    "cu": 73999,
+    "receipt": {
+      "price": 0.0022008013911545277,
+      "limit": "1980720",
+      "slot": 460064019
+    }
+  },
+  "mimirLimit": {
+    "slot": 460064019,
+    "err": null,
+    "reason": null,
+    "cu": 73999,
+    "receipt": {
+      "price": 0.0022008013911545277,
+      "limit": "1980720",
+      "slot": 460064019
+    }
+  },
+  "makerQuote": {
+    "collateral": "100000000000",
+    "payout": "221717",
+    "slot": 460064019,
+    "err": null,
+    "reason": null,
+    "cu": 73623,
+    "receipt": {
+      "price": 0.0022008013911545277,
+      "limit": "220080",
+      "slot": 460064019
+    }
+  }
+}

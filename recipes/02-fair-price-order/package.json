@@ -1,0 +1,7 @@
+{
+  "name": "02-fair-price-order",
+  "private": true,
+  "type": "module",
+  "scripts": { "dev": "vite", "build": "vite build", "preview": "vite preview" },
+  "dependencies": { "buffer": "^6.0.3", "mimir-easy": "*" }
+}
